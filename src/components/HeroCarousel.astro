@@ -1,0 +1,155 @@
+---
+// Componente Hero Carousel
+---
+
+<section class="hero-carousel" id="inicio" aria-roledescription="carrusel" aria-label="Servicios y promociones de Sabores y Colores" tabindex="-1">
+  <div class="hero-slides">
+    <!-- Slide 1: Tu marca merece destacar -->
+    <section class="hero hero-with-portrait hero-slide wrap" id="slide-marca" role="group" aria-roledescription="diapositiva" aria-label="1 de 3: Tu marca merece destacar">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dots"><i></i><i></i><i></i></span> ESTUDIO CREATIVO</p>
+        <h1>Tu marca merece<br><em>destacar</em><span class="pink">.</span></h1>
+        <p class="hero-lead">Le damos color a tus ideas.<br><strong>Y una intención a cada diseño.</strong></p>
+        <p class="intro">Branding, diseño web y contenido para que tu marca se vea, se sienta y se recuerde.</p>
+        <div class="actions">
+          <a class="button" href="https://wa.me/529993628792?text=Hola%2C%20Sabores%20y%20Colores.%20Me%20gustar%C3%ADa%20platicar%20sobre%20mi%20proyecto." target="_blank" rel="noopener noreferrer">
+            Hablemos de tu proyecto <span>↗</span>
+          </a>
+          <a class="text-link" href="#proyectos">Explora nuestro diseño <span>↓</span></a>
+        </div>
+        <div class="hero-foot">
+          <span>Creatividad</span><b>+</b><span>Diseño</span><b>+</b><span>Estrategia</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-scene">
+          <img class="hero-portrait" src="/image/hero-base.png" alt="Chica sonriente rodeada de trazos turquesa, magenta y amarillo de Sabores y Colores" width="1672" height="941" fetchpriority="high" />
+          <svg class="hero-original-layers" viewBox="0 0 1672 941" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+            <defs>
+              <filter id="extract-pink" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 -2 1 0 -0.6"/>
+                <feComponentTransfer><feFuncA type="linear" slope="12" intercept="-0.3"/></feComponentTransfer>
+              </filter>
+              <mask id="mask-pink" maskUnits="userSpaceOnUse" x="0" y="0" width="1672" height="941" style="mask-type:alpha">
+                <image href="/image/hero-chica.png" width="1672" height="941" filter="url(#extract-pink)"/>
+              </mask>
+
+              <filter id="extract-teal" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 -2 1 1 0 -0.7"/>
+                <feComponentTransfer><feFuncA type="linear" slope="12" intercept="-0.3"/></feComponentTransfer>
+              </filter>
+              <mask id="mask-teal" maskUnits="userSpaceOnUse" x="0" y="0" width="1672" height="941" style="mask-type:alpha">
+                <image href="/image/hero-chica.png" width="1672" height="941" filter="url(#extract-teal)"/>
+              </mask>
+
+              <filter id="extract-gold" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 1 -2 0 -1"/>
+                <feComponentTransfer><feFuncA type="linear" slope="12" intercept="-0.3"/></feComponentTransfer>
+              </filter>
+              <mask id="mask-gold" maskUnits="userSpaceOnUse" x="0" y="0" width="1672" height="941" style="mask-type:alpha">
+                <image href="/image/hero-chica.png" width="1672" height="941" filter="url(#extract-gold)"/>
+              </mask>
+
+              <clipPath id="pink-band-zone"><path d="M1302 118H1672V475H1302Z"/></clipPath>
+              <clipPath id="teal-band-zone"><path d="M800 474H1050V780H800Z"/></clipPath>
+              <clipPath id="gold-band-zone"><path d="M800 490H1672V815H1450V941H800Z"/></clipPath>
+              <clipPath id="pink-dot-zone"><circle cx="941" cy="451" r="25"/></clipPath>
+              <clipPath id="teal-dot-zone"><circle cx="1543" cy="771" r="25"/></clipPath>
+              <clipPath id="gold-dot-zone"><circle cx="1511" cy="891" r="24"/></clipPath>
+            </defs>
+            <g class="original-band band-pink">
+              <g clip-path="url(#pink-band-zone)"><image href="/image/hero-chica.png" width="1672" height="941" mask="url(#mask-pink)"/></g>
+            </g>
+            <g class="original-band band-teal">
+              <g clip-path="url(#teal-band-zone)"><image href="/image/hero-chica.png" width="1672" height="941" mask="url(#mask-teal)"/></g>
+            </g>
+            <g class="original-band band-gold">
+              <g clip-path="url(#gold-band-zone)"><image href="/image/hero-chica.png" width="1672" height="941" mask="url(#mask-gold)"/></g>
+            </g>
+            <g class="original-dot dot-pink">
+              <image href="/image/hero-chica.png" width="1672" height="941" clip-path="url(#pink-dot-zone)" mask="url(#mask-pink)"/>
+            </g>
+            <g class="original-dot dot-teal">
+              <image href="/image/hero-chica.png" width="1672" height="941" clip-path="url(#teal-dot-zone)" mask="url(#mask-teal)"/>
+            </g>
+            <g class="original-dot dot-gold">
+              <image href="/image/hero-chica.png" width="1672" height="941" clip-path="url(#gold-dot-zone)" mask="url(#mask-gold)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <button class="motion-toggle" type="button" aria-pressed="false">Ⅱ Pausar animación</button>
+    </section>
+
+    <!-- Slide 2: Paquete Web Esencial -->
+    <section class="hero-slide promo-slide" id="slide-web" role="group" aria-roledescription="diapositiva" aria-label="2 de 3: Paquete Web Esencial" hidden inert>
+      <div class="promo-inner wrap">
+        <div class="promo-copy">
+          <p class="eyebrow"><span class="dots"><i></i><i></i><i></i></span> PAQUETE WEB ESENCIAL</p>
+          <h2>Tu negocio merece<br><em>su propio espacio.</em></h2>
+          <p class="promo-lead">Una landing para presentar tu marca<br>y convertir visitas en conversaciones.</p>
+          <div class="hero-offer-price">$4,999 <span>MXN / por proyecto</span></div>
+          <ul class="offer-features">
+            <li>Landing adaptable a celular</li>
+            <li>Dominio y hosting</li>
+            <li>Contacto directo por WhatsApp</li>
+          </ul>
+          <div class="actions">
+            <a class="button" data-interest="Web Esencial · $4,999 MXN" href="https://wa.me/529993628792?text=Hola%2C%20Sabores%20y%20Colores.%20Me%20interesa%20Web%20Esencial%20%C2%B7%20%244%2C999%20MXN.%20%C2%BFMe%20comparten%20informaci%C3%B3n%3F" target="_blank" rel="noopener noreferrer">
+              Quiero mi sitio web <span>↗</span>
+            </a>
+            <a class="text-link" href="#paquetes">Ver el paquete ↓</a>
+          </div>
+          <p class="offer-note">Alcance, impuestos aplicables y vigencias en tu cotización.</p>
+        </div>
+        <div class="promo-visual web-visual">
+          <img src="/image/hero-web.svg" width="1000" height="760" alt="Mockup de la landing de Sabores y Colores en computadora y celular" />
+          <span class="visual-note">TU MARCA, EN CUALQUIER PANTALLA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Promoción Especial -->
+    <section class="hero-slide promo-slide discount-slide" id="slide-promo" role="group" aria-roledescription="diapositiva" aria-label="3 de 3: Obtén 10 por ciento de descuento" hidden inert>
+      <div class="promo-inner wrap">
+        <div class="promo-copy">
+          <p class="eyebrow"><span class="dots"><i></i><i></i><i></i></span> PROMOCIÓN ESPECIAL</p>
+          <h2>Tu próxima idea,<br><em>con un beneficio extra.</em></h2>
+          <div class="hero-discount">
+            <strong>10<span>%</span></strong>
+            <p>DE DESCUENTO</p>
+          </div>
+          <p class="promo-lead">En tu próximo pedido o compra de alguno de nuestros paquetes.</p>
+          <p class="intro">Tarjeta digital · Landing page básica · Contenido para redes sociales · Creación de logotipo.</p>
+          <div class="actions">
+            <a class="button" href="https://wa.me/529993628792?text=Hola%2C%20Sabores%20y%20Colores.%20Me%20interesa%20obtener%20el%2010%25%20de%20descuento%20en%20mi%20pr%C3%B3ximo%20paquete%20o%20solicitud.%20%C2%BFMe%20ayudan%20a%20cotizar%20mi%20proyecto%3F" target="_blank" rel="noopener noreferrer">
+              Quiero mi 10% de descuento <span>↗</span>
+            </a>
+          </div>
+          <p class="offer-note">Vigencia: hasta el 31 de diciembre de 2026. Promoción de uso personal, válida una sola vez por cliente y no acumulable con otras promociones.</p>
+        </div>
+        <div class="promo-visual discount-visual">
+          <img src="/image/promo-cuatro-servicios.webp" width="1448" height="1086" alt="Mockups de tarjeta digital, landing page, contenido para redes y diseño de logotipo" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Controles del Carrusel -->
+  <div class="carousel-controls wrap">
+    <span class="carousel-count" aria-hidden="true">01 <span>/ 03</span></span>
+    <div class="carousel-dots" aria-label="Elegir diapositiva">
+      <button type="button" aria-label="Ver slide 1: El estudio" aria-controls="slide-marca" aria-current="true" data-slide="0"></button>
+      <button type="button" aria-label="Ver slide 2: Web Esencial" aria-controls="slide-web" data-slide="1"></button>
+      <button type="button" aria-label="Ver slide 3: Descuento del 10%" aria-controls="slide-promo" data-slide="2"></button>
+    </div>
+    <div class="carousel-navigation">
+      <button class="carousel-prev" type="button" aria-label="Diapositiva anterior">←</button>
+      <button class="carousel-next" type="button" aria-label="Diapositiva siguiente">→</button>
+      <button class="carousel-pause" type="button" aria-pressed="false" aria-label="Pausar rotación automática">
+        Ⅱ <span>Pausar slides</span>
+      </button>
+    </div>
+  </div>
+  <p class="sr-only carousel-status" aria-live="off" aria-atomic="true">Slide 1 de 3: El estudio</p>
+</section>

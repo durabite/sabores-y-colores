@@ -1,0 +1,18 @@
+---
+// Componente Modal de Proyectos (Dialog)
+---
+
+<dialog id="project-dialog" aria-labelledby="project-title" aria-describedby="project-description">
+  <div class="case-topbar">
+    <span>SC / PROYECTOS</span>
+    <span id="case-position"></span>
+    <button type="button" class="dialog-close" aria-label="Cerrar proyecto" autofocus>×</button>
+    <div class="case-progress" aria-hidden="true"></div>
+  </div>
+  <article id="case-content"></article>
+  <div class="case-bottom">
+    <button type="button" id="case-prev">← Anterior</button>
+    <button type="button" id="case-back">Volver al portafolio</button>
+    <button type="button" id="case-next">Siguiente →</button>
+  </div>
+</dialog>

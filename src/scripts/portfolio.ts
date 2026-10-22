@@ -1,0 +1,238 @@
+// Portfolio case studies: local content, native modal focus management, interactive filter toolbar
+export function initPortfolio() {
+  const image = (file: string, alt: string, caption = '', className = '') =>
+    `<figure class="case-figure ${className}"><img src="/image/${file}" alt="${alt}" loading="lazy" decoding="async">${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
+
+  const section = (n: string, title: string, copy: string) =>
+    `<section class="case-section"><p class="eyebrow">${n} / EL DISEÑO</p><h3>${title}</h3><p>${copy}</p></section>`;
+
+  const palette = (colors: [string, string][]) =>
+    `<div class="case-palette" aria-label="Paleta de colores">${colors.map(([hex, label]) => `<div><i style="background:${hex}"></i><span>${label}</span><small>${hex}</small></div>`).join('')}</div>`;
+
+  const projects: Record<string, {
+    title: string;
+    service: string;
+    type: string;
+    lead: string;
+    description: string;
+    scope: string[];
+    interest: string;
+    color: string;
+    body: string;
+  }> = {
+    mariana: {
+      title: 'Dra. Mariana Lira',
+      service: 'Branding · Pediatría integral',
+      type: 'Proyecto conceptual',
+      lead: 'Una identidad que cuida desde el primer encuentro.',
+      description: 'Una propuesta de marca cercana y luminosa para comunicar cuidado, acompañamiento y confianza en pediatría.',
+      scope: ['Logotipo e ícono', 'Paleta y tipografía', 'Aplicaciones de identidad'],
+      interest: 'Paquete Logo · $2,499 MXN',
+      color: '#5AA6E6',
+      body:
+        image('mariana-cover.webp', 'Portada de la identidad de Mariana Lira con tarjeta, papelería y un oso de peluche') +
+        section('01', 'Cuidado que se ve y se siente.', 'Un corazón y un estetoscopio se encuentran en un símbolo amable. La tipografía de formas suaves y los acentos de color construyen un lenguaje pensado para familias.') +
+        image('caso-mariana.webp', 'Propuesta de identidad de Mariana Lira: logotipo, símbolo, tipografía, paleta, tarjeta de paciente y publicación social', 'Sistema visual y aplicaciones de la propuesta de marca.') +
+        section('02', 'Una misma voz, en cada contacto.', 'La identidad se extiende al espacio de consulta. La recepción, el mobiliario y los acentos de color transmiten el mismo tono cercano que el logotipo.') +
+        image('mariana-interior-v8.webp', 'Aplicación de la identidad de Mariana Lira en la recepción de un consultorio pediátrico', 'La marca en el espacio: recepción y ambiente de consulta.') +
+        section('03', 'Cercanía también en redes.', 'El lenguaje visual se adapta a una publicación para familias: un mensaje breve, fotografía cálida y los elementos reconocibles de la marca.') +
+        image('mariana-social-v8.webp', 'Publicación de Instagram de Mariana Lira con madre e hijo y el mensaje Tus hijos están en buenas manos', 'Aplicación social: una pieza distinta al diseño del consultorio.', 'case-social-focus'),
+    },
+    tierra: {
+      title: 'Uno con la Tierra',
+      service: 'Diseño web · Tienda natural',
+      type: 'Propuesta de sitio web',
+      lead: 'Reconecta con tu esencia a través de la tierra.',
+      description: 'Una propuesta de tienda de productos naturales, herbolaria tradicional, baños con hierbas y rituales, inspirada en el universo visual de la marca.',
+      scope: ['Diseño de tienda', 'Catálogo de productos', 'Rituales y talleres'],
+      interest: 'Una propuesta a medida',
+      color: '#B6513F',
+      body:
+        image('tierra-cover.webp', 'Portada del sitio Uno con la Tierra en tonos terracota, con ilustración femenina y productos naturales') +
+        section('01', 'Una tienda con raíces.', 'La ilustración, las formas orgánicas y la paleta cálida trasladan la identidad de Uno con la Tierra a una experiencia de compra. Las categorías ayudan a explorar remedios y preparados de herbolaria tradicional, baños con hierbas, aromas y otros productos naturales.') +
+        `<div class="case-browser"><div class="browser-bar"><span>● ● ●</span><span>UNO CON LA TIERRA / TIENDA Y RITUALES</span></div>${image('tierra-v2.webp', 'Propuesta completa de tienda: portada ilustrada, herbolaria, baños botánicos, productos, historia, talleres y preguntas frecuentes', 'Diseño de tienda en imagen. Catálogo y compra son una propuesta visual, sin transacciones activas.', 'case-long')}</div>` +
+        section('02', 'Del descubrimiento al producto.', 'Un recorrido que conecta la historia de la marca con el catálogo y los talleres. Las fichas de producto permiten presentar ingredientes, contenido y formas de uso. El desarrollo de una tienda en línea se cotiza según su alcance.') +
+        '<div class="case-deliverables"><div><b>Explorar</b><p>Herbolaria, baños con hierbas, aromas y rituales.</p></div><div><b>Conocer</b><p>Productos naturales con identidad y una presentación clara.</p></div><div><b>Conectar</b><p>Talleres, comunidad y accesos de contacto.</p></div></div>',
+    },
+    barberia: {
+      title: 'Distrito 07',
+      service: 'Tarjeta digital · Barbería',
+      type: 'Proyecto conceptual',
+      lead: 'Buen corte. Identidad propia.',
+      description: 'Una tarjeta personalizada para Distrito 07: identidad clásica de barbería, verde profundo y acentos latón, con accesos de contacto claros.',
+      scope: ['Perfil breve', 'Botones de contacto', 'Servicios y ubicación'],
+      interest: 'Tarjeta digital · $500 MXN al año',
+      color: '#25443D',
+      body:
+        section('01', 'Lo esencial, a la mano.', 'Perfil, contacto principal, redes, servicios y ubicación. Una sola columna, textos breves y botones claros para consultar desde el celular.') +
+        `<div class="simple-card-stage"><div class="simple-business-card branded-barber"><div class="barber-brand-header"><img src="/image/distrito07-logo.svg" alt="Distrito 07 Barbería, emblema de tijeras" width="260" height="160"><span>CORTE CLÁSICO · ESTILO PROPIO</span></div><div class="simple-profile"><p>Cortes clásicos, fades y cuidado de barba.<br>Tu estilo, con atención al detalle.</p><div class="simple-link quiet">↓ Guardar contacto en el teléfono</div></div><div class="simple-link main"><span>Agendar por WhatsApp<small>Consulta disponibilidad y reserva tu visita</small></span><span>↗</span></div><h5><span class="barber-section-icon">↗</span> Conecta con nosotros</h5><div class="simple-link"><span>Instagram<small>Conoce nuestros cortes</small></span><span>↗</span></div><div class="simple-link"><span>Facebook<small>Novedades de la barbería</small></span><span>↗</span></div><h5><span class="barber-section-icon">✂</span> Servicios</h5><div class="simple-services"><p><b>Corte clásico y fade</b><span>Un corte adaptado a tu estilo.</span></p><p><b>Diseño de barba</b><span>Perfilado y cuidado de barba.</span></p><p><b>Corte + barba</b><span>Tu visita completa en una sesión.</span></p></div><h5><span class="barber-section-icon">◷</span> Visítanos</h5><div class="simple-location"><p><b>Visítanos</b><br>Dirección del negocio</p><p>Lunes a sábado<br>10:00 a 20:00</p><div class="simple-link">Abrir ubicación ↗</div></div><p class="simple-example">Ejemplo de diseño · Datos ilustrativos</p></div></div>` +
+        section('02', 'Una tarjeta, un enlace.', 'El diseño prioriza guardar el contacto y agendar una visita, con accesos secundarios a redes y ubicación. Esta muestra es visual: no envía mensajes ni guarda datos de un negocio ficticio.'),
+    },
+    redes: {
+      title: 'Miga, café de barrio',
+      service: 'Redes Activas · Gastronomía',
+      type: 'Proyecto conceptual',
+      lead: 'Contenido que se antoja y se reconoce.',
+      description: 'Una muestra de campaña para un café de barrio: fotografía de producto, mensajes de marca y contenido editorial con una misma personalidad.',
+      scope: ['6 ejemplos de posts', 'Sistema gráfico', 'Propuesta de stories'],
+      interest: 'Redes Activas · $2,999 MXN al mes',
+      color: '#A53629',
+      body:
+        image('miga-cover.webp', 'Portada de Miga: café frío, vaso de marca y croissant sobre fondo rojo y amarillo') +
+        section('01', 'Un feed con sabor propio.', 'La paleta cálida y la tipografía editorial conectan seis piezas diferentes. El contenido alterna producto, personalidad, información y proceso para evitar un feed repetitivo.') +
+        `<div class="social-posts">${['Tu pausa favorita: café frío', 'Buenos días. Buen café.', 'Hecho despacio. Disfrutado aquí.', 'Tres formas de disfrutar tu café', 'Detrás de cada taza: preparación', 'Nos vemos en Miga'].map((alt, i) => `<figure><div role="img" aria-label="${alt}" style="--post-x:${(i % 3) * 50}%;--post-y:${i < 3 ? 0 : 100}%"></div><figcaption>0${i + 1} / ${['Producto', 'Marca', 'Producto', 'Editorial', 'Proceso', 'Comunidad'][i]}</figcaption></figure>`).join('')}</div>` +
+        section('02', 'Del feed a las stories.', 'La misma dirección visual se adapta al formato vertical. Estos ejemplos de diseño muestran continuidad entre formatos; son una selección ilustrativa, no los 20 contenidos de un mes completo.') +
+        `<div class="story-grid"><div class="miga-story story-red"><span>MIGA / CAFÉ DE BARRIO</span><h4>Haz una<br>pausa.<br>Quédate<br>un café.</h4><span>HOY SE VALE IR DESPACIO.</span></div><div class="miga-story story-yellow"><span>MIGA / CAFÉ DE BARRIO</span><h4>¿Cómo va<br>tu café<br>de hoy?</h4><div class="story-poll"><span>Frío ♡</span><span>Caliente ♡</span></div><small>Propuesta visual de encuesta</small></div><div class="miga-story story-dark"><span>MIGA / CAFÉ DE BARRIO</span><h4>El mejor<br>plan:<br>nos vemos<br>aquí.</h4><span>CAFÉ + PAN + BUENA COMPAÑÍA</span></div></div>`,
+    },
+    tentee: {
+      title: 'La Tenteé',
+      service: 'Branding · Repostería',
+      type: 'Identidad de marca',
+      lead: 'El antojo no se discute, se cumple.',
+      description: 'Una identidad dulce, cálida y coqueta para una marca de repostería artesanal con los brownies como protagonistas.',
+      scope: ['Identidad visual', 'Empaques y menús', 'Aplicaciones de marca'],
+      interest: 'Una propuesta a medida',
+      color: '#9D3155',
+      body:
+        image('tentee-cover.webp', 'Portada de La Tenteé con bolsa color vino, mascota brownie, caja y postre') +
+        section('01', 'Una marca que despierta antojo.', 'El personaje, la paleta y la tipografía construyen un universo cercano y memorable. La identidad acompaña al producto desde el empaque hasta la experiencia en el punto de venta.') +
+        `<div class="identity-system tentee-system">${image('tentee-logo.webp', 'Logotipo de La Tenteé con personaje brownie', 'Logotipo y personaje de marca.')}<div class="identity-type"><span>PERSONALIDAD</span><h4>Dulce.<br>Cálida.<br>Coqueta.</h4><p>Lettering expresivo, un personaje cercano y detalles suaves que acompañan al producto.</p></div></div>` +
+        palette([['#963354', 'Vino'], ['#E8B3BD', 'Rosa'], ['#E6DBCC', 'Crema'], ['#7EA79B', 'Verde suave']]) +
+        section('02', 'El empaque también provoca antojo.', 'El personaje y los detalles gráficos se adaptan a cajas y bolsas. Una identidad que acompaña cada pedido y ayuda a reconocer la marca antes de abrirlo.') +
+        `<div class="case-pair">${image('tentee-caja.webp', 'Caja de repostería La Tenteé', 'Caja y sello de marca.')}${image('tentee-bolsa.webp', 'Bolsa de galletas de La Tenteé', 'Empaque para llevar.')}</div>` +
+        section('03', 'Del menú a la experiencia.', 'Tipografía, color y mascota unen las piezas impresas con el punto de venta. Cada formato conserva su función y la misma personalidad.') +
+        image('tentee-menus.webp', 'Menú, papelería y piezas impresas de La Tenteé', 'Sistema de piezas impresas.') +
+        image('tentee-espacio.webp', 'Fachada y aplicación de marca en bebidas de La Tenteé', 'La identidad en el punto de venta.') +
+        section('04', 'La marca se mueve.', 'El sistema se extiende a delivery y contenidos digitales para mantener una presencia reconocible en distintos puntos de contacto.') +
+        `<div class="case-pair">${image('tentee-delivery.webp', 'Aplicación de la marca en vehículo de reparto', 'Delivery.')}${image('tentee-social.webp', 'Publicaciones de La Tenteé en celular', 'Contenido para redes.')}</div>`,
+    },
+    padel: {
+      title: 'Padel Shopp MX',
+      service: 'Branding · Deporte',
+      type: 'Identidad de marca',
+      lead: 'Una identidad que entra a la cancha.',
+      description: 'Una marca deportiva, moderna y competitiva para una tienda especializada en productos de pádel, con presencia digital y física.',
+      scope: ['Identidad visual', 'Aplicaciones comerciales', 'Sistema para redes'],
+      interest: 'Una propuesta a medida',
+      color: '#CADF52',
+      body:
+        image('cover-padel.webp', 'Termos y botellas con la identidad azul y verde lima de Padel Shopp MX') +
+        section('01', 'Movimiento, energía y precisión.', 'El sistema visual combina un lenguaje deportivo con contrastes de azul y verde lima. La marca se adapta a los puntos de contacto de una tienda: del e-commerce a la experiencia física.') +
+        `<div class="identity-system padel-system">${image('padel-logo.webp', 'Logotipo Padel Shopp MX en azul y verde lima', 'Marca principal.')}<div class="identity-type"><span>PERSONALIDAD</span><h4>Movimiento.<br>Energía.<br>Precisión.</h4><p>Un símbolo inspirado en el pádel y una tipografía inclinada que refuerza el carácter deportivo.</p></div></div>` +
+        palette([['#243568', 'Azul deportivo'], ['#CDDF51', 'Verde lima'], ['#FFFFFF', 'Blanco']]) +
+        section('02', 'Una base para cada punto de contacto.', 'La papelería organiza la información comercial mientras los acentos de color y el símbolo mantienen la identidad a la vista.') +
+        image('padel-papeleria.webp', 'Papelería Padel Shopp MX: carpeta, hojas, libreta, sobres y tarjetas', 'Sistema de papelería y materiales de marca.') +
+        section('03', 'Identidad que se lleva puesta.', 'La marca se adapta a prendas y accesorios. Versiones contenidas del logotipo conviven con el contraste azul y verde lima.') +
+        `<div class="case-pair">${image('padel-gorra.webp', 'Gorra azul con el logotipo Padel Shopp MX', 'Aplicación en gorra.')}${image('padel-playera.webp', 'Playera blanca con el logotipo de Padel Shopp MX', 'Aplicación textil.')}</div>` +
+        section('04', 'Del espacio físico a las redes.', 'La misma identidad conecta fachada, accesorios y comunicación digital. Un sistema reconocible para acompañar la experiencia de compra.') +
+        image('padel-espacio.webp', 'Fachada comercial y bolsa de Padel Shopp MX', 'Presencia en tienda.') +
+        image('padel-social.webp', 'Ejemplos de publicaciones y stories de Padel Shopp MX', 'Comunicación digital.', 'case-social-focus'),
+    },
+  };
+
+  const dialog = document.querySelector<HTMLDialogElement>('#project-dialog');
+  const content = document.querySelector<HTMLElement>('#case-content');
+  const cards = [...document.querySelectorAll<HTMLButtonElement>('[data-project]')];
+  if (!dialog || !content) return;
+
+  const keys = Object.keys(projects);
+  let currentKey = keys[0];
+  let trigger: HTMLButtonElement | null = null;
+
+  function progress() {
+    if (!dialog) return;
+    const max = dialog.scrollHeight - dialog.clientHeight;
+    dialog.style.setProperty(
+      '--case-progress',
+      max > 0 ? String(Math.min(1, Math.max(0, dialog.scrollTop / max))) : '0'
+    );
+  }
+
+  function render(key: string) {
+    currentKey = key;
+    const p = projects[key];
+    if (!p || !content || !dialog) return;
+    dialog.style.setProperty('--case-accent', p.color);
+    content.innerHTML = `<div class="case-intro"><p class="eyebrow">${p.service} <span class="case-badge">${p.type}</span></p><h2 id="project-title">${p.title}</h2><p class="case-lead">${p.lead}</p><p id="project-description">${p.description}</p><ul class="case-tags">${p.scope.map((x) => `<li>${x}</li>`).join('')}</ul><span class="scroll-hint">RECORRE EL PROYECTO ↓</span></div>${p.body}<section class="case-cta"><div><p class="eyebrow">TU MARCA PUEDE SER LA SIGUIENTE</p><h3>¿Creamos algo para ti?</h3><p>Cuéntanos tu idea y definimos el alcance de tu proyecto.</p></div><a class="button" href="https://wa.me/529993628792?text=${encodeURIComponent('Hola, Sabores y Colores. Me interesa un proyecto de ' + p.service + '. ¿Podemos platicar?')}" target="_blank" rel="noopener noreferrer" id="case-contact">Hablemos de tu proyecto ↗</a></section>`;
+
+    if (key === 'barberia' && typeof window.barberDemoMarkup === 'function') {
+      content.innerHTML = window.barberDemoMarkup();
+      window.bindBarberDemo(content);
+    }
+
+    const pos = document.querySelector('#case-position');
+    if (pos) {
+      pos.textContent = `${String(keys.indexOf(key) + 1).padStart(2, '0')} / 06`;
+    }
+
+    dialog.scrollTop = 0;
+    progress();
+    content.querySelectorAll('img').forEach((img) =>
+      img.addEventListener('load', progress, { once: true })
+    );
+  }
+
+  cards.forEach((button) =>
+    button.addEventListener('click', () => {
+      trigger = button;
+      const projId = button.dataset.project;
+      if (projId) render(projId);
+      dialog.showModal();
+      document.body.classList.add('modal-open');
+      dialog.scrollTop = 0;
+      (document.querySelector('.dialog-close') as HTMLElement)?.focus({ preventScroll: true });
+      progress();
+    })
+  );
+
+  document.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
+  document.querySelector('#case-back')?.addEventListener('click', () => dialog.close());
+
+  for (const [id, direction] of [
+    ['case-prev', -1],
+    ['case-next', 1],
+  ] as const) {
+    document.querySelector('#' + id)?.addEventListener('click', () => {
+      render(keys[(keys.indexOf(currentKey) + direction + keys.length) % keys.length]);
+      (document.querySelector('.dialog-close') as HTMLElement)?.focus({ preventScroll: true });
+    });
+  }
+
+  dialog.addEventListener('click', (e) => {
+    if (e.target !== dialog) return;
+    const r = dialog.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) {
+      dialog.close();
+    }
+  });
+
+  dialog.addEventListener('close', () => {
+    document.body.classList.remove('modal-open');
+    trigger?.focus({ preventScroll: true });
+  });
+
+  dialog.addEventListener('scroll', progress, { passive: true });
+  window.addEventListener('resize', progress);
+
+  document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach((button) =>
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      document
+        .querySelectorAll('[data-filter]')
+        .forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+      let count = 0;
+      cards.forEach((card) => {
+        card.hidden = filter !== 'all' && card.dataset.category !== filter;
+        if (!card.hidden) {
+          count++;
+          card.classList.remove('motion-pending');
+          card.classList.add('motion-visible');
+        }
+      });
+      const countEl = document.querySelector('#portfolio-count');
+      if (countEl) {
+        countEl.textContent = `${count} ${count === 1 ? 'proyecto' : 'proyectos'}`;
+      }
+    })
+  );
+}

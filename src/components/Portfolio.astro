@@ -1,0 +1,126 @@
+---
+// Componente Sección 03 / PORTAFOLIO
+const projects = [
+  {
+    id: "mariana",
+    category: "branding",
+    cardClass: "case-mariana",
+    image: "/image/mariana-cover.webp",
+    alt: "Portada de Mariana Lira: identidad pediátrica y papelería",
+    type: "Proyecto conceptual",
+    service: "Branding · Pediatría integral",
+    title: "Dra. Mariana Lira",
+    num: "01",
+  },
+  {
+    id: "tierra",
+    category: "web",
+    cardClass: "case-tierra",
+    image: "/image/tierra-cover.webp",
+    alt: "Sitio de productos naturales con ilustración y tonos terracota",
+    type: "Propuesta de sitio web",
+    service: "Diseño web · Tienda natural",
+    title: "Uno con la Tierra",
+    num: "02",
+  },
+  {
+    id: "barberia",
+    category: "tarjeta",
+    cardClass: "case-barberia",
+    image: "/image/cover-barberia-brand.svg",
+    alt: "Tarjeta de Distrito 07 con logo de barbería, verde profundo y latón",
+    type: "Proyecto conceptual",
+    service: "Tarjeta digital · Barbería",
+    title: "Distrito 07",
+    num: "03",
+  },
+  {
+    id: "redes",
+    category: "redes",
+    cardClass: "case-redes",
+    image: "/image/miga-cover.webp",
+    alt: "Café, croissant y vaso Miga en una portada roja y amarilla",
+    type: "Proyecto conceptual",
+    service: "Redes Activas · Gastronomía",
+    title: "Miga, café de barrio",
+    num: "04",
+  },
+  {
+    id: "tentee",
+    category: "branding",
+    cardClass: "case-tentee",
+    image: "/image/tentee-cover.webp",
+    alt: "Identidad La Tenteé con empaque, mascota y brownie",
+    type: "Identidad de marca",
+    service: "Branding · Repostería",
+    title: "La Tenteé",
+    num: "05",
+  },
+  {
+    id: "padel",
+    category: "branding",
+    cardClass: "case-padel",
+    image: "/image/cover-padel.webp",
+    alt: "Termos Padel Shopp MX sobre fondo verde lima",
+    type: "Identidad de marca",
+    service: "Branding · Deporte",
+    title: "Padel Shopp MX",
+    num: "06",
+  },
+];
+---
+
+<section class="section wrap" id="proyectos">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">03 / PORTAFOLIO</p>
+      <h2>Ideas que toman<br /><em>forma y color.</em></h2>
+    </div>
+    <p>Explora el diseño detrás de cada marca. Abre un proyecto y recorre su identidad, sus aplicaciones y sus detalles.</p>
+  </div>
+
+  <div class="portfolio-toolbar">
+    <div class="portfolio-filters" role="group" aria-label="Filtrar proyectos por servicio">
+      <button type="button" data-filter="all" aria-pressed="true">Todos</button>
+      <button type="button" data-filter="branding" aria-pressed="false">Branding</button>
+      <button type="button" data-filter="web" aria-pressed="false">Sitios web</button>
+      <button type="button" data-filter="tarjeta" aria-pressed="false">Tarjetas digitales</button>
+      <button type="button" data-filter="redes" aria-pressed="false">Redes sociales</button>
+    </div>
+    <span id="portfolio-count" role="status" aria-live="polite">6 proyectos</span>
+  </div>
+
+  <div class="projects">
+    {projects.map((proj) => (
+      <button 
+        class={`project case-card ${proj.cardClass}`} 
+        data-project={proj.id} 
+        data-category={proj.category} 
+        aria-haspopup="dialog"
+      >
+        <div class="project-image">
+          <img 
+            src={proj.image} 
+            alt={proj.alt} 
+            loading="lazy" 
+            width="1200" 
+            height="800" 
+          />
+          <span class="case-type">{proj.type}</span>
+          <span class="view-project">Ver proyecto completo ↗</span>
+        </div>
+        <div class="project-label">
+          <div>
+            <small>{proj.service}</small>
+            <h3>{proj.title}</h3>
+          </div>
+          <span>{proj.num} ↗</span>
+        </div>
+      </button>
+    ))}
+  </div>
+
+  <p class="portfolio-note">
+    Una selección de identidades de marca y propuestas conceptuales. Cada caso presenta su alcance; definimos el de tu proyecto en una propuesta personalizada.
+  </p>
+</section>

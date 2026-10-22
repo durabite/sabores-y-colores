@@ -1,0 +1,46 @@
+---
+// Componente Sección 04 / ASÍ TRABAJAMOS
+const steps = [
+  {
+    num: "01",
+    title: "Te escuchamos",
+    description: "Conocemos tu negocio, tu audiencia y lo que quieres lograr.",
+  },
+  {
+    num: "02",
+    title: "Definimos el rumbo",
+    description: "Acordamos alcance, entregables, tiempos e inversión.",
+  },
+  {
+    num: "03",
+    title: "Damos forma",
+    description: "Desarrollamos la propuesta y afinamos los detalles contigo.",
+  },
+  {
+    num: "04",
+    title: "Listo para conectar",
+    description: "Entregamos los materiales acordados para que tu marca salga al mundo.",
+  },
+];
+---
+
+<section class="process section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">04 / ASÍ TRABAJAMOS</p>
+        <h2>Buenas ideas.<br /><span class="teal">Un proceso claro.</span></h2>
+      </div>
+      <p>Sabes qué vamos a crear, cómo avanzamos y qué vas a recibir.</p>
+    </div>
+    <div class="steps">
+      {steps.map((step) => (
+        <article>
+          <span>{step.num}</span>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

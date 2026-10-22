@@ -1,0 +1,65 @@
+---
+// Componente Sección 01 / LO QUE HACEMOS
+const servicesList = [
+  {
+    symbolClass: "symbol-brand",
+    title: "Identidad de marca",
+    description: "Logos, sistemas visuales y aplicaciones que expresan quién eres y te ayudan a diferenciarte.",
+    linkHref: "#paquetes",
+    linkText: "Dale identidad a tu idea",
+  },
+  {
+    symbolClass: "symbol-web",
+    title: "Web & tarjetas digitales",
+    description: "Landing pages, sitios y tarjetas digitales para presentar tu negocio y facilitar el contacto.",
+    linkHref: "#paquetes",
+    linkText: "Construye tu presencia",
+  },
+  {
+    symbolClass: "symbol-content",
+    title: "Contenido & redes",
+    description: "Piezas gráficas, carruseles, historias y reels que hacen de tu comunicación un universo coherente.",
+    linkHref: "#paquetes",
+    linkText: "Conecta con tu comunidad",
+  },
+  {
+    symbolClass: "symbol-strategy",
+    title: "Diseño & estrategia",
+    description: "Diseño editorial, materiales comerciales y campañas digitales alineadas con tus objetivos.",
+    linkHref: "https://wa.me/529993628792?text=Hola%2C%20Sabores%20y%20Colores.%20Me%20gustar%C3%ADa%20platicar%20sobre%20mi%20proyecto.",
+    linkText: "Cuéntanos qué necesitas",
+    external: true,
+  },
+];
+---
+
+<section class="section wrap" id="servicios">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">01 / LO QUE HACEMOS</p>
+      <h2>Tu marca tiene algo que decir.<br /><em>Hagamos que se note.</em></h2>
+    </div>
+    <p>Desde la primera idea hasta cada punto de contacto: diseño con coherencia, propósito y tu propia personalidad.</p>
+  </div>
+  <div class="services">
+    {servicesList.map((service) => (
+      <article>
+        <span class={`service-symbol ${service.symbolClass}`} aria-hidden="true">
+          {service.symbolClass === "symbol-brand" && <i></i>}
+          {service.symbolClass === "symbol-web" && <i></i>}
+          {service.symbolClass === "symbol-content" && <><i></i><i></i><i></i></>}
+          {service.symbolClass === "symbol-strategy" && <i></i>}
+        </span>
+        <h3>{service.title}</h3>
+        <p>{service.description}</p>
+        <a 
+          href={service.linkHref} 
+          target={service.external ? "_blank" : undefined}
+          rel={service.external ? "noopener noreferrer" : undefined}
+        >
+          {service.linkText} <span>↗</span>
+        </a>
+      </article>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+// Componente Sección 06 / TODO CLARO (Preguntas Frecuentes y Métodos de Pago)
+const faqs = [
+  {
+    q: "¿Qué necesitan para comenzar?",
+    a: "Cuéntanos sobre tu negocio y el servicio que necesitas. Según el proyecto, te pediremos logo, textos, fotografías, enlaces y referencias. Con la propuesta aceptada, el pago y los materiales completos, programamos el trabajo.",
+  },
+  {
+    q: "¿Cuánto tarda mi proyecto?",
+    a: "La tarjeta digital tiene un tiempo estimado de 2 días hábiles. Para logo o branding, la referencia es de 4 a 5 días hábiles, según alcance y aprobaciones. Los sitios web se calendarizan en la propuesta. Los tiempos comienzan con el pago y la información completa.",
+  },
+  {
+    q: "¿Puedo pedir algo fuera de los paquetes?",
+    a: "Sí. También desarrollamos proyectos de identidad, diseño editorial, materiales comerciales y campañas digitales a la medida. Escríbenos para revisar el alcance y preparar una cotización.",
+  },
+  {
+    q: "¿El paquete de redes incluye pauta?",
+    a: "No. El paquete cubre la creación de contenido acordada. La gestión de campañas y el presupuesto que se invierte en Meta se cotizan por separado. El servicio de redes se trabaja con pago mensual anticipado y contrato.",
+  },
+  {
+    q: "¿Qué es una vCard?",
+    a: "Es el archivo de contacto que una persona puede guardar en su celular desde tu tarjeta digital, sin escribir tus datos. El QR abre la tarjeta; dentro encontrará tus enlaces y el botón para guardar tu contacto.",
+  },
+];
+---
+
+<section class="section faq-section">
+  <div class="wrap faq-grid">
+    <div>
+      <p class="eyebrow">06 / TODO CLARO</p>
+      <h2>Hablemos<br />sin <em>complicaciones.</em></h2>
+      <p>Queremos que empieces con claridad y confianza.</p>
+
+      <div class="payments">
+        <span>FORMAS DE PAGO</span>
+        <strong>Transferencia bancaria</strong>
+        <strong>Mercado Pago</strong>
+        <p>Pago anticipado. Te compartimos las instrucciones al confirmar tu propuesta.</p>
+      </div>
+    </div>
+
+    <div class="faqs">
+      {faqs.map((faq) => (
+        <details>
+          <summary>
+            {faq.q} <span>+</span>
+          </summary>
+          <p>{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

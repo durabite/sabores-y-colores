@@ -1,0 +1,52 @@
+---
+// Componente Sección 02 / EL ESTUDIO
+const values = [
+  "Creatividad con propósito",
+  "Comunicación cercana",
+  "Coherencia visual",
+  "Claridad en cada paso",
+];
+---
+
+<section class="about section" id="nosotros">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">02 / EL ESTUDIO</p>
+      <h2>Una mezcla de ideas.<br /><span class="teal">Una intención clara.</span></h2>
+      <div class="about-quote">
+        Creamos marcas que conectan, comunican y dejan huella<span class="pink">.</span>
+      </div>
+      <div class="dots large">
+        <i></i><i></i><i></i>
+      </div>
+    </div>
+    <div>
+      <p class="large-copy">
+        Somos Sabores y Colores, un estudio creativo que combina creatividad, diseño y estrategia para dar forma a marcas con personalidad.
+      </p>
+      <p>
+        Creemos que una marca se construye entendiendo qué quiere comunicar, a quién quiere llegar y qué necesita hacer sentir. Por eso, escuchamos antes de diseñar y damos intención a cada decisión.
+      </p>
+      <p>
+        Acompañamos a marcas, negocios y proyectos que quieren comunicar mejor lo que hacen, diferenciarse y construir una presencia visual sólida.
+      </p>
+      <div class="purpose">
+        <details open>
+          <summary>Nuestra misión <span>+</span></summary>
+          <p>
+            Crear soluciones visuales estratégicas que ayuden a marcas, empresas y proyectos a comunicar su esencia de forma clara, auténtica y memorable, combinando creatividad, diseño y estrategia en cada etapa del proceso.
+          </p>
+        </details>
+        <details>
+          <summary>Nuestra visión <span>+</span></summary>
+          <p>
+            Consolidarnos como un estudio creativo reconocido por desarrollar marcas y experiencias visuales con personalidad, capaces de conectar con las personas, diferenciarse y crecer de manera coherente en distintos medios y mercados.
+          </p>
+        </details>
+      </div>
+    </div>
+  </div>
+  <div class="wrap values">
+    {values.map((val) => <span>{val}</span>)}
+  </div>
+</section>

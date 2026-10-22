@@ -1,23 +1,48 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Sabores y Colores | Diseño que conecta con intención",
+  description = "Estudio creativo de branding, diseño web, redes sociales y tarjetas digitales. Damos color a tu marca con creatividad, diseño y estrategia.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/image/favicon.svg" />
+    <meta name="theme-color" content="#F4F1EF" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      import '../scripts/barber-demo.ts';
+      import { initCarousel } from '../scripts/carousel.ts';
+      import { initPortfolio } from '../scripts/portfolio.ts';
+      import { initApp } from '../scripts/app.ts';
+
+      // Initialize interactive features on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        initCarousel();
+        initPortfolio();
+        initApp();
+      });
+    </script>
+  </body>
+</html>

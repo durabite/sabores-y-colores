@@ -1,0 +1,21 @@
+---
+// Componente ServiceStrip (Tira de servicios destacados)
+const services = [
+  "Branding",
+  "Diseño web",
+  "Contenido",
+  "Marketing digital",
+  "Tarjetas digitales",
+];
+---
+
+<div class="service-strip">
+  <div class="wrap">
+    {services.map((service, index) => (
+      <>
+        <span>{service}</span>
+        {index < services.length - 1 && <i aria-hidden="true"></i>}
+      </>
+    ))}
+  </div>
+</div>

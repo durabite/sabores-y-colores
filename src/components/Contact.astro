@@ -1,0 +1,81 @@
+---
+// Componente Sección Contacto y Formulario WhatsApp
+---
+
+<section class="contact section" id="contacto">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">TU PRÓXIMO PROYECTO EMPIEZA AQUÍ</p>
+      <h2>Con nosotros<br />empieza <em>tu historia.</em></h2>
+      <p>Cuéntanos qué tienes en mente.<br />Le damos forma contigo.</p>
+      
+      <a class="phone" href="https://wa.me/529993628792" target="_blank" rel="noopener noreferrer">
+        +52 999 362 8792 <span>↗</span>
+      </a>
+      <p class="small-note">Atención por WhatsApp</p>
+      
+      <a 
+        class="contact-email" 
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=info.saboresycolores.ec@gmail.com&su=Consulta%20sobre%20mi%20proyecto" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        info.saboresycolores.ec@gmail.com ↗
+      </a>
+      
+      <div class="dots large" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+    </div>
+
+    <form id="brief-form">
+      <h3>¿Qué vamos a crear?</h3>
+      
+      <label for="name">Tu nombre</label>
+      <input 
+        id="name" 
+        name="name" 
+        placeholder="¿Cómo te llamas?" 
+        autocomplete="given-name" 
+        maxlength="100" 
+      />
+
+      <label for="business">Tu marca o negocio</label>
+      <input 
+        id="business" 
+        name="business" 
+        placeholder="Nombre de tu proyecto" 
+        autocomplete="organization" 
+        maxlength="120" 
+      />
+
+      <label for="service">Me interesa</label>
+      <select id="service" name="service">
+        <option value="Una propuesta a medida">Una propuesta a medida</option>
+        <option value="Paquete Logo · $2,499 MXN">Paquete Logo · $2,499 MXN</option>
+        <option value="Web Esencial · $4,999 MXN">Web Esencial · $4,999 MXN</option>
+        <option value="Redes Activas · $2,999 MXN al mes">Redes Activas · $2,999 MXN al mes</option>
+        <option value="Tarjeta digital · $500 MXN al año">Tarjeta digital · $500 MXN al año</option>
+        <option value="Campañas y estrategia digital">Campañas y estrategia digital</option>
+      </select>
+
+      <label for="message">Un poco sobre tu idea</label>
+      <textarea 
+        id="message" 
+        name="message" 
+        rows="3" 
+        maxlength="1800" 
+        placeholder="¿Qué te gustaría lograr?"
+      ></textarea>
+
+      <button class="button" type="submit">
+        Continuar por WhatsApp <span>↗</span>
+      </button>
+
+      <p class="form-note">
+        Se abrirá WhatsApp con tu mensaje preparado. Tú decides cuándo enviarlo. Este formulario no almacena tus datos.
+      </p>
+      <p id="form-status" role="status"></p>
+    </form>
+  </div>
+</section>

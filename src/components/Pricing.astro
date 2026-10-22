@@ -1,0 +1,146 @@
+---
+// Componente Sección 05 / EMPIEZA POR AQUÍ (Planes y Tarjeta Digital)
+const packages = [
+  {
+    category: "IDENTIDAD",
+    title: "Paquete Logo",
+    description: "Una identidad para empezar a destacar.",
+    price: "$2,499",
+    currency: "MXN",
+    period: "por proyecto",
+    features: [
+      "2 propuestas de logo",
+      "Versiones del logotipo",
+      "Mockups de aplicación",
+      "Archivos finales",
+    ],
+    buttonText: "Quiero mi logo",
+    interest: "Paquete Logo · $2,499 MXN",
+    whatsappUrl: "https://wa.me/529993628792?text=Hola%2C%20Sabores%20y%20Colores.%20Me%20interesa%20Paquete%20Logo%20%C2%B7%20%242%2C499%20MXN.%20%C2%BFMe%20comparten%20informaci%C3%B3n%3F",
+  },
+  {
+    category: "PRESENCIA DIGITAL",
+    title: "Web Esencial",
+    description: "Un lugar para contar lo que hace única a tu marca.",
+    price: "$4,999",
+    currency: "MXN",
+    period: "por proyecto",
+    features: [
+      "Landing page",
+      "Diseño adaptable a celular",
+      "Dominio y hosting",
+      "Acceso directo a WhatsApp",
+    ],
+    buttonText: "Quiero mi sitio",
+    interest: "Web Esencial · $4,999 MXN",
+    whatsappUrl: "https://wa.me/529993628792?text=Hola%2C%20Sabores%20y%20Colores.%20Me%20interesa%20Web%20Esencial%20%C2%B7%20%244%2C999%20MXN.%20%C2%BFMe%20comparten%20informaci%C3%B3n%3F",
+  },
+  {
+    category: "COMUNICACIÓN",
+    title: "Redes Activas",
+    description: "Una presencia constante y con intención.",
+    price: "$2,999",
+    currency: "MXN",
+    period: "al mes",
+    features: [
+      "20 contenidos mensuales",
+      "Posts, stories y reels",
+      "Copies para tus contenidos",
+      "1 ronda de ajustes por arte",
+    ],
+    buttonText: "Activar mis redes",
+    interest: "Redes Activas · $2,999 MXN al mes",
+    whatsappUrl: "https://wa.me/529993628792?text=Hola%2C%20Sabores%20y%20Colores.%20Me%20interesa%20Redes%20Activas%20%C2%B7%20%242%2C999%20MXN%20al%20mes.%20%C2%BFMe%20comparten%20informaci%C3%B3n%3F",
+  },
+];
+---
+
+<section class="section wrap" id="paquetes">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">05 / EMPIEZA POR AQUÍ</p>
+      <h2>El siguiente paso de tu marca,<br /><em>a tu medida.</em></h2>
+    </div>
+    <p>Paquetes de lanzamiento para poner tus ideas en marcha. ¿Tu proyecto necesita algo más? Creamos una propuesta personalizada.</p>
+  </div>
+
+  <div class="pricing">
+    {packages.map((pkg) => (
+      <article class="price-card">
+        <span class="plan-category">{pkg.category}</span>
+        <h3>{pkg.title}</h3>
+        <p class="plan-desc">{pkg.description}</p>
+        <div class="price">
+          {pkg.price} <small>{pkg.currency}</small>
+        </div>
+        <p class="period">{pkg.period}</p>
+        <ul>
+          {pkg.features.map((feat) => <li>{feat}</li>)}
+        </ul>
+        <a 
+          class="button outline" 
+          data-interest={pkg.interest} 
+          href={pkg.whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          {pkg.buttonText} <span>↗</span>
+        </a>
+      </article>
+    ))}
+  </div>
+
+  <!-- Tarjeta Digital interactiva -->
+  <div class="digital-card">
+    <div class="digital-showcase" aria-hidden="true">
+      <div class="phone-demo">
+        <div class="phone-camera"></div>
+        <div class="phone-screen">
+          <img src="/image/logo.png" alt="" />
+          <span class="demo-kicker">ESTUDIO CREATIVO</span>
+          <strong>Ideas que<br />conectan<span>.</span></strong>
+          <p>Todo sobre tu marca.<br />En un solo lugar.</p>
+          <span class="demo-link primary">Hablemos por WhatsApp ↗</span>
+          <span class="demo-link">Conoce nuestros proyectos ↗</span>
+          <span class="demo-link">Escríbenos un correo ↗</span>
+          <span class="demo-save">＋ Guardar contacto</span>
+          <span class="dots"><i></i><i></i><i></i></span>
+        </div>
+      </div>
+      <span class="demo-caption">VISTA ILUSTRATIVA DE TARJETA DIGITAL</span>
+    </div>
+
+    <div>
+      <span class="plan-category">TU CONTACTO, SIEMPRE A LA MANO</span>
+      <h3>Tu marca,<br />a un toque<span class="pink">.</span></h3>
+      <p class="digital-subtitle">Tarjeta digital personalizada</p>
+      <p>
+        Comparte tu información con un link y un QR. Incluye botones a tus redes, WhatsApp y la opción de guardar tu contacto en el celular.
+      </p>
+      <details>
+        <summary>Ver qué incluye y opciones</summary>
+        <p>
+          Diseño personalizado, enlaces y hosting por 1 año. Link estándar incluido. Dominio personalizado: +$300 MXN al año ($800 MXN total). Actualizaciones de enlaces o eventos: $100 MXN por actualización. Entrega estimada: 2 días hábiles después de recibir el pago y la información completa.
+        </p>
+      </details>
+    </div>
+
+    <div class="digital-price">
+      <div class="price">$500 <small>MXN</small></div>
+      <p>al año</p>
+      <a 
+        class="button outline" 
+        data-interest="Tarjeta digital · $500 MXN al año" 
+        href="https://wa.me/529993628792?text=Hola%2C%20Sabores%20y%20Colores.%20Me%20interesa%20Tarjeta%20digital%20%C2%B7%20%24500%20MXN%20al%20a%C3%B1o.%20%C2%BFMe%20comparten%20informaci%C3%B3n%3F" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Quiero mi tarjeta <span>↗</span>
+      </a>
+    </div>
+  </div>
+
+  <p class="pricing-note">
+    Precios en MXN. El alcance final, los impuestos aplicables, las vigencias de dominio y hosting y los tiempos se detallan en tu cotización. Redes: pago mensual anticipado y permanencia según contrato. La inversión publicitaria, las campañas y los servicios adicionales se cotizan por separado.
+  </p>
+</section>
